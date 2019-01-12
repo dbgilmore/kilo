@@ -105,11 +105,34 @@ char *C_HL_keywords[] = {
   "void|", NULL
 };
 
+char *SCALA_HL_extensions[] = { ".scala", NULL };
+
+char *SCALA_HL_keywords[] = {
+
+  "abstract", "case", "catch", "class", "def", "do", "else", "extends",
+  "false", "final", "finally", "for", "Some", "None", "Option", "Future",
+  "if", "implicit", "import", "lazy", "match", "new", "object", "override",
+  "package", "private", "import", "protected", "return", "sealed", "super",
+  "this", "throw", "trait", "Try", "true", "false", "type", "val", "var",
+  "while", "with", "yield", "-", ":", "=", "=>", "<-", "<:", "<%", ">:",
+  "#","@",
+
+  "String|", "Int|", "Long|", "Double|", "Float|", "Char|", "Unsigned|",
+  "Signed|", "Unit|", NULL
+};
+
 struct editorSyntax HLDB[] = {
   {
     "c",
     C_HL_extensions,
     C_HL_keywords,
+    "//", "/*", "*/",
+    HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS
+  },
+  {
+    "scala",
+    SCALA_HL_extensions,
+    SCALA_HL_keywords,
     "//", "/*", "*/",
     HL_HIGHLIGHT_NUMBERS | HL_HIGHLIGHT_STRINGS
   },
